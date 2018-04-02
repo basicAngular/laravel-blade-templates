@@ -1,0 +1,343 @@
+<templateSet group="Laravel-Form">
+  <template name="Form::open" value="{!! Form::open(['$TYPE$' =&gt; '$TARGET$'$OPTIONS$]) !!}&#10;&#9;$END$&#10;{!! Form::close() !!}" description="Open a Form" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="enum(&quot;route&quot;, &quot;url&quot;, &quot;action&quot;)" defaultValue="&quot;route&quot;" alwaysStopAt="true" />
+    <variable name="TARGET" expression="" defaultValue="&quot;route.name&quot;" alwaysStopAt="true" />
+    <variable name="OPTIONS" expression="" defaultValue="&quot;, 'method' =&gt; 'post'&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::openWithFileUpload" value="{!! Form::open(['$TYPE$' =&gt; '$TARGET$',$OPTIONS$ 'files' =&gt; true]) !!}&#10;&#9;$END$&#10;{!! Form::close() !!}" description="Open a Form and Enable File Upload" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="enum(&quot;route&quot;, &quot;url&quot;, &quot;action&quot;)" defaultValue="&quot;route&quot;" alwaysStopAt="true" />
+    <variable name="TARGET" expression="" defaultValue="&quot;route.name&quot;" alwaysStopAt="true" />
+    <variable name="OPTIONS" expression="" defaultValue="&quot; 'method' =&gt; 'post'&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::model" value="{!! Form::model($MODEL$, ['$TYPE$' =&gt; $TARGET$$OPTIONS$]) !!}&#10;&#9;$END$&#10;{!! Form::close() !!}" description="Open a Form with Model Binding" toReformat="false" toShortenFQNames="true">
+    <variable name="MODEL" expression="" defaultValue="&quot;$user&quot;" alwaysStopAt="true" />
+    <variable name="TYPE" expression="enum(&quot;route&quot;, &quot;url&quot;, &quot;action&quot;)" defaultValue="&quot;route&quot;" alwaysStopAt="true" />
+    <variable name="TARGET" expression="" defaultValue="&quot;['user.update', $user-&gt;id]&quot;" alwaysStopAt="true" />
+    <variable name="OPTIONS" expression="" defaultValue="&quot;, 'method' =&gt; 'post'&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::label" value="{!! Form::label('$NAME$', '$DEFAULT$'$OPTION$) !!}$END$" description="Generate a Label element" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;email&quot;" alwaysStopAt="true" />
+    <variable name="DEFAULT" expression="capitalize(NAME)" defaultValue="" alwaysStopAt="true" />
+    <variable name="OPTION" expression="" defaultValue="&quot;, ['class' =&gt; 'control-label']&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::text" value="{!! Form::text('$NAME$', '$DEFAULT$'$OPTION$) !!}$END$" description="Generate a Text Input element (name, default, attributes)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;email&quot;" alwaysStopAt="true" />
+    <variable name="DEFAULT" expression="capitalize(NAME)" defaultValue="" alwaysStopAt="true" />
+    <variable name="OPTION" expression="" defaultValue="&quot;, ['class' =&gt; 'form-control']&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::hidden" value="{!! Form::hidden('$NAME$', '$DEFAULT$'$OPTION$) !!}$END$" description="Generate a Hidden Input element (name, default)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="DEFAULT" expression="" defaultValue="value" alwaysStopAt="true" />
+    <variable name="OPTION" expression="" defaultValue="&quot;, ['id' =&gt; 'id']&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::textarea" value="{!! Form::textarea('$NAME$', '$DEFAULT$'$OPTION$) !!}$END$" description="Generate a Textarea Input element (name, default, attributes)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;body&quot;" alwaysStopAt="true" />
+    <variable name="DEFAULT" expression="capitalize(NAME)" defaultValue="" alwaysStopAt="true" />
+    <variable name="OPTION" expression="" defaultValue="&quot;, ['class' =&gt; 'form-control']&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::email" value="{!! Form::email('$NAME$', '$DEFAULT$'$OPTION$) !!}$END$" description="Generate an Email Input element (name, default, attributes)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;email&quot;" alwaysStopAt="true" />
+    <variable name="DEFAULT" expression="capitalize(NAME)" defaultValue="" alwaysStopAt="true" />
+    <variable name="OPTION" expression="" defaultValue="&quot;, ['class' =&gt; 'form-control']&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::checkbox" value="&lt;label&gt;&#10;&#9;{!! Form::checkbox('$NAME$', '$DEFAULT$', $CHECKED$ ['id' =&gt; '$ID$']) !!}&#10;&#9;$TEXT$&#10;&lt;/label&gt;$END$" description="Generate a Checkbox element (name, value, checked, attributes)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="DEFAULT" expression="" defaultValue="&quot;1&quot;" alwaysStopAt="true" />
+    <variable name="CHECKED" expression="enum(&quot;null, &quot;, &quot;true, &quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID" expression="NAME" defaultValue="" alwaysStopAt="true" />
+    <variable name="TEXT" expression="" defaultValue="&quot;Some text here&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::radio" value="&lt;label&gt;&#10;&#9;{!! Form::radio('$NAME$', '$DEFAULT$', $CHECKED$ ['id' =&gt; '$ID$']) !!}&#10;&#9;$TEXT$&#10;&lt;/label&gt;$END$" description="Generate a Radio element (name, value, checked, attributes)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="DEFAULT" expression="" defaultValue="&quot;1&quot;" alwaysStopAt="true" />
+    <variable name="CHECKED" expression="enum(&quot;null, &quot;, &quot;true, &quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID" expression="NAME" defaultValue="" alwaysStopAt="true" />
+    <variable name="TEXT" expression="" defaultValue="&quot;Some text here&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::password" value="{!! Form::password('$NAME$'$OPTION$) !!}$END$" description="Generate a Password Input element (name, attributes)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;password&quot;" alwaysStopAt="true" />
+    <variable name="OPTION" expression="" defaultValue="&quot;, ['class' =&gt; 'form-control']&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::input" value="{!! Form::file('$NAME$'$OPTION$) !!}$END$" description="Generate a File Input element (name, attributes)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;filename&quot;" alwaysStopAt="true" />
+    <variable name="OPTION" expression="" defaultValue="&quot;, ['class' =&gt; 'form-control']&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::select" value="{!! Form::select('$NAME$', $LIST$ $DEFAULT$ $OPTION$) !!}$END$" description="Generate a Drop-down list (name, array of options, default, attributes)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="LIST" expression="" defaultValue="&quot;$array&quot;" alwaysStopAt="true" />
+    <variable name="DEFAULT" expression="" defaultValue="&quot;, null&quot;" alwaysStopAt="true" />
+    <variable name="OPTION" expression="" defaultValue="&quot;, ['class' =&gt; 'form-control']&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::selectRange" value="{!! Form::selectRange('$NAME$', $FROM$, $TO$ $DEFAULT$ $OPTION$) !!}$END$" description="Generate a Drop-down list with Range (name, from, to, default, attributes)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="FROM" expression="" defaultValue="&quot;1&quot;" alwaysStopAt="true" />
+    <variable name="TO" expression="" defaultValue="&quot;20&quot;" alwaysStopAt="true" />
+    <variable name="DEFAULT" expression="" defaultValue="&quot;, null&quot;" alwaysStopAt="true" />
+    <variable name="OPTION" expression="" defaultValue="&quot;, ['class' =&gt; 'form-control']&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::selectMonth" value="{!! Form::selectMonth('$NAME$' $DEFAULT$ $OPTION$) !!}$END$" description="Generate a Drop-down list with Months (name, default, attributes)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;Month&quot;" alwaysStopAt="true" />
+    <variable name="DEFAULT" expression="" defaultValue="&quot;, null&quot;" alwaysStopAt="true" />
+    <variable name="OPTION" expression="" defaultValue="&quot;, ['class' =&gt; 'form-control']&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::submit" value="{!! Form::submit('$NAME$'$OPTION$) !!}$END$" description="Generate a Submit button (value, attributes)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;Submit&quot;" alwaysStopAt="true" />
+    <variable name="OPTION" expression="" defaultValue="&quot;, ['class' =&gt; 'form-control']&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="Form::macro" value="Form::macro('$NAME$', function()&#10;{&#10;    $END$&#10;});" description="Generate a Form Macro" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="&quot;macro&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="textfield" value="&lt;div class=&quot;form-group&quot;&gt;&#10;    {!! Form::label('$NAME$', '$VALUE$:') !!}&#10;    {!! Form::text('$NAME$', null, ['class' =&gt; 'form-control']) !!}&#10;&lt;/div&gt;" description="text field with div and class" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="XSL_TEXT" value="true" />
+      <option name="XML" value="true" />
+      <option name="XML_TEXT" value="true" />
+      <option name="JSON" value="true" />
+      <option name="SQL" value="true" />
+      <option name="CSS_PROPERTY_VALUE" value="true" />
+      <option name="CSS_DECLARATION_BLOCK" value="true" />
+      <option name="CSS_RULESET_LIST" value="true" />
+      <option name="CSS" value="true" />
+      <option name="Twig" value="true" />
+      <option name="CUCUMBER_FEATURE_FILE" value="true" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JSX_HTML" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+      <option name="TypeScript" value="true" />
+      <option name="CoffeeScript" value="true" />
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="true" />
+      <option name="PHP String Literal" value="true" />
+      <option name="HAML" value="true" />
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="emailfield" value="&lt;div class=&quot;form-group&quot;&gt;&#10;    {!! Form::label('$NAME$', '$VALUE$:') !!}&#10;    {!! Form::email('$NAME$', null, ['class' =&gt; 'form-control']) !!}&#10;&lt;/div&gt;" description="email field with bootstrap class" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="passwordfield" value="&lt;!--- $VALUE$ Field ---&gt;&#10;&lt;div class=&quot;form-group&quot;&gt;&#10;    {!! Form::label('$NAME$', '$VALUE$:') !!}&#10;    {!! Form::password('$NAME$', ['class' =&gt; 'form-control']) !!}&#10;&lt;/div&gt;&#10;" description="password field with div and form class" toReformat="false" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="XSL_TEXT" value="true" />
+      <option name="XML" value="true" />
+      <option name="XML_TEXT" value="true" />
+      <option name="JSON" value="true" />
+      <option name="SQL" value="true" />
+      <option name="CSS_PROPERTY_VALUE" value="true" />
+      <option name="CSS_DECLARATION_BLOCK" value="true" />
+      <option name="CSS_RULESET_LIST" value="true" />
+      <option name="CSS" value="true" />
+      <option name="Twig" value="true" />
+      <option name="CUCUMBER_FEATURE_FILE" value="true" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JSX_HTML" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+      <option name="TypeScript" value="true" />
+      <option name="CoffeeScript" value="true" />
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="true" />
+      <option name="PHP String Literal" value="true" />
+      <option name="HAML" value="true" />
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="textareafield" value="&lt;!--- $VALUE$ Field ---&gt;&#10;&lt;div class=&quot;form-group&quot;&gt;&#10;    {!! Form::label('$NAME$', '$VALUE$:') !!}&#10;    {!! Form::textarea('$NAME$', null, ['class' =&gt; 'form-control']) !!}&#10;&lt;/div&gt;" description="text area with class and" toReformat="false" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="true" />
+      <option name="PHP String Literal" value="true" />
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="hiddenfield" value="{!! Form::hidden('$NAME$', $VALUE$) !!}" description="form hidden" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP Comment" value="true" />
+      <option name="PHP String Literal" value="true" />
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="submitfield" value="&lt;!--- $VALUE$ Field ---&gt;&#10;&lt;div class=&quot;form-group&quot;&gt;&#10;    {!! Form::submit('$NAME$', ['class' =&gt; 'btn btn-primary']) !!}&#10;&lt;/div&gt;" description="submit field enter here" toReformat="false" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="true" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="errors" value="@if($errors-&gt;any())&#10;    &lt;ul&gt;&#10;@foreach($errors-&gt;all() as $error)&#10;    &lt;li&gt;{{ $error }}&lt;/li&gt;&#10;@endforeach&#10;    &lt;/ul&gt;&#10;@endif" description="display of the error in laravel and shows with foreach" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="PHP Comment" value="true" />
+      <option name="PHP String Literal" value="true" />
+      <option name="HAML" value="true" />
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="bootcss 3.2.0" value="&lt;link rel=&quot;stylesheet&quot; href=&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css&quot;/&gt;" description="apply cdn bootstrap" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="XSL_TEXT" value="true" />
+      <option name="XML" value="true" />
+      <option name="XML_TEXT" value="true" />
+      <option name="JSON" value="true" />
+      <option name="SQL" value="true" />
+      <option name="CSS_PROPERTY_VALUE" value="true" />
+      <option name="CSS_DECLARATION_BLOCK" value="true" />
+      <option name="CSS_RULESET_LIST" value="true" />
+      <option name="CSS" value="true" />
+      <option name="Twig" value="true" />
+      <option name="CUCUMBER_FEATURE_FILE" value="true" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JSX_HTML" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+      <option name="TypeScript" value="true" />
+      <option name="CoffeeScript" value="true" />
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="true" />
+      <option name="PHP String Literal" value="true" />
+      <option name="HAML" value="true" />
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="$this-&gt;validate" value="    $this-&gt;validate($request,[&#10;            'name'  =&gt; 'required',&#10;            'size'  =&gt; 'required',&#10;            'image' =&gt; 'image|mimes:png,jpg,jpeg,gif|max:10000',&#10;        ]);" description="for laravel validation goes here" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="XML_TEXT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="SQL" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="Twig" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JS_EXPRESSION" value="false" />
+      <option name="JSX_HTML" value="false" />
+      <option name="JS_STATEMENT" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP String Literal" value="false" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+</templateSet>
